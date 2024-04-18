@@ -8,6 +8,7 @@ public enum TalkNPC
 {
     Player1 , 
     Player2 , 
+    NPC,
 }
 [System.Serializable]
 public class TalkItem

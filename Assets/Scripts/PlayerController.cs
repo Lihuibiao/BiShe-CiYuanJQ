@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     private List<Vector2> points = new List<Vector2>();
 
     public float runSpeed = 1f;
+    public int Attack = 1;
+    public int Hp = 20;
+    public int Score;
     void Awake()
     {
         myAnim = GetComponent<Animator>();
@@ -20,6 +23,8 @@ public class PlayerController : MonoBehaviour
         PolygonCollider2D = GetComponent<PolygonCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
         Inst = this;
+        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -71,10 +76,8 @@ public class PlayerController : MonoBehaviour
             myAnim.SetBool("Jump" , true);
             // 获取当前动画状态
             AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
-            // 如果已经过了动画的一半（大约25%进度）
             if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.5f)
             {
-                // 开始播放下一个动画 "AnimationClipB"
                 myAnim.SetBool("Jump2" , true);
             }
         }
@@ -98,6 +101,23 @@ public class PlayerController : MonoBehaviour
         if (myAnim.GetBool("Attack_01"))
         {
             myAnim.SetBool("Attack_01" , false);
+            AttackOnce();
+        }
+    }
+
+    public void SetIdle()
+    {
+        myAnim.SetBool("Attack_01" , false);
+        myAnim.SetBool("Jump" , false);
+        myAnim.SetBool("Run" , false);
+    }
+
+    public XieZi AttackXieZi;
+    private void AttackOnce()
+    {
+        if (AttackXieZi != null)
+        {
+            AttackXieZi.OnGetHurt();
         }
     }
     
@@ -112,8 +132,20 @@ public class PlayerController : MonoBehaviour
         return info.IsName("Jump") || info.IsName("Jump2");
     }
     
+    public bool IsAttackAni()
+    {
+        return myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01");
+    }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
-        // Debug.LogError(other.gameObject.name);
+        Debug.LogError(other.gameObject.name);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.LogError("Trigger " + other.gameObject);
+    }
+    
+    
 }
