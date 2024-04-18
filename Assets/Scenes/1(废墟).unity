@@ -4034,11 +4034,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026112604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d50323794fe6224a978ee913e904835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ImgBg: {fileID: 1032440478}
   MsgTxt: {fileID: 60434096}
-  SkipMsg: 1
+  SkipMsg: 0

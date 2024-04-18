@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             // 获取当前动画状态
             AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
             // 如果已经过了动画的一半（大约25%进度）
-            if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.25f)
+            if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.5f)
             {
                 // 开始播放下一个动画 "AnimationClipB"
                 myAnim.SetBool("Jump2" , true);
