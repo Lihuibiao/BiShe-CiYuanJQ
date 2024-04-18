@@ -37,11 +37,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-        else
+        else if(move.x > 0)
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        transform.Translate(Mathf.Abs(Input.GetAxis("Horizontal")) * Time.deltaTime * runSpeed , 0f , 0f);
+
+        if (IsRunAni() || IsJumpAni())
+        {
+            transform.Translate(Mathf.Abs(Input.GetAxis("Horizontal")) * Time.deltaTime * runSpeed , 0f , 0f);   
+        }
         AniCtrl(move);
     }
 
@@ -53,17 +57,6 @@ public class PlayerController : MonoBehaviour
 
     private void AniCtrl(Vector2 move)
     {
-        if (myAnim.GetBool("Run"))
-        {
-            myAnim.SetBool("Run" , false);
-        }
-        
-        if (myAnim.GetBool("Jump"))
-        {
-            myAnim.SetBool("Jump" , false);
-        }
-        
-        
         if (move.x != 0 && !IsRunAni())
         {
             myAnim.SetBool("Run" , true);
@@ -72,12 +65,51 @@ public class PlayerController : MonoBehaviour
         {
             myAnim.SetBool("Run", false);
         }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            myAnim.SetBool("Jump" , true);
+            // 获取当前动画状态
+            AnimatorStateInfo stateInfo = myAnim.GetCurrentAnimatorStateInfo(0);
+            // 如果已经过了动画的一半（大约25%进度）
+            if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.25f)
+            {
+                // 开始播放下一个动画 "AnimationClipB"
+                myAnim.SetBool("Jump2" , true);
+            }
+        }
+        else
+        {
+            myAnim.SetBool("Jump", false);
+            myAnim.SetBool("Jump2", false);
+        }
+        
+        
+        if (Input.GetKeyDown(KeyCode.J) && !myAnim.GetCurrentAnimatorStateInfo(0).IsName("Attack_01"))
+        {
+            myAnim.SetBool("Attack_01" , true);
+            this.Invoke("delayCloseAttack" , 0.2f);
+        }
         myAnim.SetFloat("MoveX" , Mathf.Abs(move.x));
     }
 
+    private void delayCloseAttack()
+    {
+        if (myAnim.GetBool("Attack_01"))
+        {
+            myAnim.SetBool("Attack_01" , false);
+        }
+    }
+    
     private bool IsRunAni()
     {
         return myAnim.GetCurrentAnimatorStateInfo(0).IsName("Run");
+    }
+    
+    private bool IsJumpAni()
+    {
+        var info = myAnim.GetCurrentAnimatorStateInfo(0);
+        return info.IsName("Jump") || info.IsName("Jump2");
     }
     
     private void OnCollisionEnter2D(Collision2D other)

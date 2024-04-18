@@ -52,9 +52,14 @@ public class StartGameSceneTalk : MonoBehaviour
 
     public Image ImgBg;
     public Text MsgTxt;
+    public bool SkipMsg = false;
     private int CurDispIndex = 0;
     private void Start()
     {
+        if (SkipMsg)
+        {
+            return;
+        }
         PlayerController.Inst.enabled = false;
         DispMsg();
     }
