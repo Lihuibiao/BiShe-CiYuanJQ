@@ -115,7 +115,7 @@ public class Scene2 : MonoBehaviour
     public void OnClickB1()
     {
         CloseAllShopBtn();
-        ShopMsg.gameObject.SetActive(false);
+        ShopBg.gameObject.SetActive(false);
         PlayerController.Inst.Score += 10;
         PlayerController.Inst.enabled = true;
     }
@@ -123,7 +123,7 @@ public class Scene2 : MonoBehaviour
     public void OnClickB2()
     {
         CloseAllShopBtn();
-        ShopMsg.gameObject.SetActive(false);
+        ShopBg.gameObject.SetActive(false);
         PlayerController.Inst.Score += 10;
         PlayerController.Inst.enabled = true;
     }
