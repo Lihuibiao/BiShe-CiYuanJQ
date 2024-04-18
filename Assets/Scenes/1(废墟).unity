@@ -67,6 +67,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -418,7 +421,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -527,7 +530,6 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172412149}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -551,8 +553,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -740,7 +741,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &565444382
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -754,7 +755,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1991,7 +1991,6 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014305725}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2015,8 +2014,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2041,7 +2039,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1018371544
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2055,7 +2053,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2623,7 +2620,6 @@ TilemapCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121108384}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2647,8 +2643,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2763,7 +2758,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1240712022
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2777,7 +2772,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -2870,7 +2864,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1257860247
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2884,7 +2878,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3076,7 +3069,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1310493586
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3090,7 +3083,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3116,7 +3108,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1398342269
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3130,7 +3122,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3223,7 +3214,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1420151736
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3237,7 +3228,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3530,7 +3520,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1545585611
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3544,7 +3534,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3570,7 +3559,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1635949410
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3584,7 +3573,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3814,7 +3802,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1801994980
 Animator:
-  serializedVersion: 7
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3828,7 +3816,6 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -3855,7 +3842,6 @@ PolygonCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801994976}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3879,8 +3865,7 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
