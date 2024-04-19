@@ -90,7 +90,7 @@ public class Scene2 : MonoBehaviour
         }
     }
 
-    private bool AlreadyTalk;
+    private static bool AlreadyTalk;
     private void HideMsg()
     {
         AlreadyTalk = true;
@@ -128,7 +128,7 @@ public class Scene2 : MonoBehaviour
         PlayerController.Inst.enabled = true;
     }
 
-    private bool CanShowShop = true;
+    private static bool CanShowShop = true;
     public void OnClickC()
     {
         CloseAllShopBtn();
