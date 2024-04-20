@@ -1,27 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Scene3 : MonoBehaviour
+public class DiXiaGongDian2 : MonoBehaviour
 {
+    private List<TalkItem> FirstTalkList = new List<TalkItem>()
+    {
+        new TalkItem(){Name = "奥利" , Msg = "我似乎嗅到了危险的气息" , TalkNPC = TalkNPC.Player1} ,
+        new TalkItem(){Name = "托克" , Msg = "似乎机械先驱就在附近，但这个房间似乎没有出口。" , TalkNPC = TalkNPC.Player2} , 
+    };
+
     public Vector3 PlayerEnterPos;
-    private static bool AlreadyShow; 
-    void Start()
+    private void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        if (!AlreadyShow)
-        {
-            DispMsg();
-            AlreadyShow = true;   
-        }
     }
 
     public Image ImgBg;
     public Text MsgTxt;
     private int CurDispIndex = 0;
     
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && ImgBg.gameObject.activeSelf)
@@ -36,15 +37,6 @@ public class Scene3 : MonoBehaviour
             }
         }
     }
-    
-    
-    private List<TalkItem> FirstTalkList = new List<TalkItem>()
-    {
-        new TalkItem(){Name = "奥利" , Msg = "这里满目疮痍，似乎遭到了很严重的破坏" , TalkNPC = TalkNPC.Player1} ,
-        new TalkItem(){Name = "托克" , Msg = "估计是机械先驱的手下机械蝇的杰作，他盘踞于地下室，喜欢破坏在让奴役的人来修复，周而复始。" , TalkNPC = TalkNPC.Player2} , 
-        new TalkItem(){Name = "系统提示" , Msg = "玩家可选择多条路线，通过广场中间的传送仓可到达天桥，左连接灯塔顶部，右连接机械宫殿二层，下连接地下一层" , TalkNPC = TalkNPC.Player1} ,
-    };
-    
     
     private void DispMsg()
     {

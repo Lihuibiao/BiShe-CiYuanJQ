@@ -119,6 +119,12 @@ public class PlayerController : MonoBehaviour
         {
             AttackXieZi.OnGetHurt();
         }
+
+        var xianqu = Transform.FindAnyObjectByType<JiXieXianQu>();
+        if (xianqu != null && Vector3.Distance(transform.position , xianqu.transform.position) < 17)
+        {
+            xianqu.OnGetHurt();
+        }
     }
     
     private bool IsRunAni()
