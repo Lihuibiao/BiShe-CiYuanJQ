@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa1af0fe1eb2c945a3f1056860d67ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerEnterPos: {x: 168, y: 47.63, z: 0}
+  PlayerEnterPos: {x: 168, y: 52.8, z: 0}
   ImgBg: {fileID: 193732837}
   MsgTxt: {fileID: 976811777}
 --- !u!114 &891071463
@@ -8061,7 +8061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1854584961
 Rigidbody2D:
   serializedVersion: 4
@@ -8448,8 +8448,8 @@ Transform:
   m_GameObject: {fileID: 1854584960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 168, y: 47.63, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 168, y: 52.8, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

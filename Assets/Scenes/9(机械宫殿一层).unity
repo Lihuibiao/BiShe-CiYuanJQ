@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ee09b17c56f354d81265eac56441a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerEnterPos: {x: 163.3, y: -31.3, z: 0}
+  PlayerEnterPos: {x: 169.4, y: -26.5, z: 0}
   ImgBg: {fileID: 1279111908}
   MsgTxt: {fileID: 1818144161}
   Npc: {fileID: 434752833}
@@ -5072,8 +5072,8 @@ Transform:
   m_GameObject: {fileID: 2091079796}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 163.3, y: -31.3, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 169.4, y: -26.5, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
