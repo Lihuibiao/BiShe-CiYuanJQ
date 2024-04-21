@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class JiXieXianQu : MonoBehaviour
+public class JiXieShouWei : MonoBehaviour
 {
     public Animator myAnim;
     private SpriteRenderer SpriteRenderer;
     private PolygonCollider2D PolygonCollider2D;
     private List<Vector2> points = new List<Vector2>();
-    public JiXie1 Scene;
+    public JiXieGongChang Scene;
     public int Hp = 5;
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class JiXieXianQu : MonoBehaviour
 
         if (Time.timeSinceLevelLoad - lastAttackTime > 3)
         {
-            if (PlayerDis < 20)
+            if (PlayerDis < 10)
             {
                 // 攻击
                 if (Random.Range(0, 3) == 0)
@@ -55,10 +55,6 @@ public class JiXieXianQu : MonoBehaviour
                 {
                     PlayAttack2();
                 }
-            }
-            else if (PlayerDis < 30)
-            {
-                PlayAttack3();
             }
         }
         
@@ -97,7 +93,6 @@ public class JiXieXianQu : MonoBehaviour
     [InspectorButton]
     public void PlayAttack1()
     {
-        IsAttack3 = false;
         myAnim.SetBool("Attack1" , true);
         this.Invoke("delayCloseAttack" , 0.2f);
         lastAttackTime = Time.timeSinceLevelLoad;
@@ -107,27 +102,9 @@ public class JiXieXianQu : MonoBehaviour
     [InspectorButton]
     public void PlayAttack2()
     {
-        IsAttack3 = false;
         myAnim.SetBool("Attack2" , true);
         this.Invoke("delayCloseAttack" , 0.2f);
         lastAttackTime = Time.timeSinceLevelLoad;
-    }
-
-    // public GameObject Attack3Ani;
-    private bool IsAttack3;
-    [InspectorButton]
-    public void PlayAttack3()
-    {
-        IsAttack3 = true;
-        myAnim.SetBool("Attack3" , true);
-        this.Invoke("delayCloseAttack" , 0.2f);
-        // this.Invoke("closeAttack3Ani" , 1.2f);
-        // Attack3Ani.gameObject.SetActive(true);
-    }
-
-    private void closeAttack3Ani()
-    {
-        // Attack3Ani.gameObject.SetActive(false);
     }
     
     void HurtOnce()
@@ -164,11 +141,7 @@ public class JiXieXianQu : MonoBehaviour
         this.myAnim.SetBool("Attack1", false);
         this.myAnim.SetBool("Attack2", false);
         this.myAnim.SetBool("Attack3", false);
-        if (PlayerDis < 20)
-        {
-            PlayerController.Inst.Hp--;
-            return;
-        }else if (IsAttack3 && PlayerDis < 20)
+        if (PlayerDis < 10)
         {
             PlayerController.Inst.Hp--;
             return;

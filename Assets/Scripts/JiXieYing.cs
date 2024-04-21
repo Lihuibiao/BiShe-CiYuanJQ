@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class JiXieXianQu : MonoBehaviour
+public class JiXieYing : MonoBehaviour
 {
     public Animator myAnim;
     private SpriteRenderer SpriteRenderer;
     private PolygonCollider2D PolygonCollider2D;
     private List<Vector2> points = new List<Vector2>();
-    public JiXie1 Scene;
-    public int Hp = 5;
+    public Dixia2 Scene;
+    public int Hp = 3;
     private void Awake()
     {
         myAnim = GetComponent<Animator>();
@@ -31,8 +31,8 @@ public class JiXieXianQu : MonoBehaviour
         PlayerDis = Vector3.Distance(PlayerController.Inst.transform.position, this.transform.position);
         if (Move2PlayerIng)
         {
-            transform.Translate(-1 * Time.deltaTime * 20 , 0f , 0f);
-            if (PlayerDis < 30)
+            transform.Translate(-1 * Time.deltaTime * 60 , 0f , 0f);
+            if (PlayerDis < 60)
             {
                 Move2PlayerIng = false;
                 PlayerController.Inst.enabled = true;
@@ -44,7 +44,7 @@ public class JiXieXianQu : MonoBehaviour
 
         if (Time.timeSinceLevelLoad - lastAttackTime > 3)
         {
-            if (PlayerDis < 20)
+            if (PlayerDis < 13)
             {
                 // 攻击
                 if (Random.Range(0, 3) == 0)
@@ -55,10 +55,6 @@ public class JiXieXianQu : MonoBehaviour
                 {
                     PlayAttack2();
                 }
-            }
-            else if (PlayerDis < 30)
-            {
-                PlayAttack3();
             }
         }
         
@@ -97,37 +93,18 @@ public class JiXieXianQu : MonoBehaviour
     [InspectorButton]
     public void PlayAttack1()
     {
-        IsAttack3 = false;
         myAnim.SetBool("Attack1" , true);
-        this.Invoke("delayCloseAttack" , 0.2f);
         lastAttackTime = Time.timeSinceLevelLoad;
+        this.Invoke("delayCloseAttack" , 0.2f);
     }
     
     
     [InspectorButton]
     public void PlayAttack2()
     {
-        IsAttack3 = false;
         myAnim.SetBool("Attack2" , true);
-        this.Invoke("delayCloseAttack" , 0.2f);
         lastAttackTime = Time.timeSinceLevelLoad;
-    }
-
-    // public GameObject Attack3Ani;
-    private bool IsAttack3;
-    [InspectorButton]
-    public void PlayAttack3()
-    {
-        IsAttack3 = true;
-        myAnim.SetBool("Attack3" , true);
         this.Invoke("delayCloseAttack" , 0.2f);
-        // this.Invoke("closeAttack3Ani" , 1.2f);
-        // Attack3Ani.gameObject.SetActive(true);
-    }
-
-    private void closeAttack3Ani()
-    {
-        // Attack3Ani.gameObject.SetActive(false);
     }
     
     void HurtOnce()
@@ -149,7 +126,6 @@ public class JiXieXianQu : MonoBehaviour
         this.myAnim.SetBool("Death", true);
         this.myAnim.SetBool("Attack1", false);
         this.myAnim.SetBool("Attack2", false);
-        this.myAnim.SetBool("Attack3", false);
         this.Invoke("delayDestroySlef" , 0.5f);
         Scene.ShowBtnBg();
     }
@@ -163,12 +139,7 @@ public class JiXieXianQu : MonoBehaviour
     {
         this.myAnim.SetBool("Attack1", false);
         this.myAnim.SetBool("Attack2", false);
-        this.myAnim.SetBool("Attack3", false);
-        if (PlayerDis < 20)
-        {
-            PlayerController.Inst.Hp--;
-            return;
-        }else if (IsAttack3 && PlayerDis < 20)
+        if (PlayerDis < 13)
         {
             PlayerController.Inst.Hp--;
             return;
@@ -178,7 +149,7 @@ public class JiXieXianQu : MonoBehaviour
     [InspectorButton]
     public void OnGetHurt()
     {
-        Debug.LogError(" 机械先驱受伤一次");
+        Debug.LogError(" 机械蝇受伤一次");
         this.Hp--;
         if (this.Hp <= 0)
         {

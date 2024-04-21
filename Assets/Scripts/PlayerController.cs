@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     public int Score;
     void Awake()
     {
+        if (PlayerController.Inst != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         myAnim = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         PolygonCollider2D = GetComponent<PolygonCollider2D>();
@@ -124,6 +129,18 @@ public class PlayerController : MonoBehaviour
         if (xianqu != null && Vector3.Distance(transform.position , xianqu.transform.position) < 17)
         {
             xianqu.OnGetHurt();
+        }
+        
+        var jixieying = Transform.FindAnyObjectByType<JiXieYing>();
+        if (jixieying != null && Vector3.Distance(transform.position , jixieying.transform.position) < 17)
+        {
+            jixieying.OnGetHurt();
+        }
+        
+        var jiXieShouWei = Transform.FindAnyObjectByType<JiXieShouWei>();
+        if (jiXieShouWei != null && Vector3.Distance(transform.position , jiXieShouWei.transform.position) < 17)
+        {
+            jiXieShouWei.OnGetHurt();
         }
     }
     

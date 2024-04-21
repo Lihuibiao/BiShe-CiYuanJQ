@@ -6,7 +6,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public static CameraFollow Inst;
-    public Transform target;
     public float smoothing;
     public Vector2 minPosition;
     public Vector2 maxPosition;
@@ -21,17 +20,13 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (target == null)
-        {
-            target = PlayerController.Inst.transform;
-        }
     }
 
     void Update() 
     {
-        if (target != null)
+        if (PlayerController.Inst.transform != null)
         {
-            Vector3 targetPos = target.position;
+            Vector3 targetPos = PlayerController.Inst.transform.position;
             targetPos.x = Mathf.Clamp(targetPos.x + Offset.x, minPosition.x, maxPosition.x);
             targetPos.y = Mathf.Clamp(targetPos.y + Offset.y, minPosition.y, maxPosition.y);
             targetPos.z = -10;
