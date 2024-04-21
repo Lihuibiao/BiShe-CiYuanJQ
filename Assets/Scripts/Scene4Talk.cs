@@ -17,11 +17,11 @@ public class Scene4Talk : MonoBehaviour
     {
         new TalkItem(){Name = "黑市商人" , Msg = "瞧一瞧看一看，上等的芯片。" , TalkNPC = TalkNPC.NPC} ,
         new TalkItem(){Name = "奥利" , Msg = "我现在似乎到达了一个黑市" , TalkNPC = TalkNPC.Player1} , 
-        new TalkItem(){Name = "主角2" , Msg = "我位于一条狭长的通道，是前往机械先驱所在的机械宫殿的必经之路。" , TalkNPC = TalkNPC.Player2} , 
+        new TalkItem(){Name = "托克" , Msg = "我位于一条狭长的通道，是前往机械先驱所在的机械宫殿的必经之路。" , TalkNPC = TalkNPC.Player2} , 
         new TalkItem(){Name = "奥利" , Msg = "听你的语气似乎你与机械先驱是敌对关系？" , TalkNPC = TalkNPC.Player1} , 
-        new TalkItem(){Name = "主角2" , Msg = "机械先驱将我的家园毁灭，在家园的废墟上建造了他的乐园，我要击败他为我的族人们报仇雪恨。" , TalkNPC = TalkNPC.Player2} ,
+        new TalkItem(){Name = "托克" , Msg = "机械先驱将我的家园毁灭，在家园的废墟上建造了他的乐园，我要击败他为我的族人们报仇雪恨。" , TalkNPC = TalkNPC.Player2} ,
         new TalkItem(){Name = "奥利:" , Msg = "这么说来我们的目的是相同的？" , TalkNPC = TalkNPC.Player1} ,
-        new TalkItem(){Name = "主角2" , Msg = "我可以这么理解。" , TalkNPC = TalkNPC.Player2}
+        new TalkItem(){Name = "托克" , Msg = "我可以这么理解。" , TalkNPC = TalkNPC.Player2}
     };
     
     
