@@ -7,10 +7,15 @@ using UnityEngine.UI;
 public class Scene4 : MonoBehaviour
 {
     public Vector3 PlayerEnterPos;
+    private static bool alreadyTalk;
     void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     public Image ImgBg;

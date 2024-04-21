@@ -339,7 +339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94420467e2484fc7a4e9c029f183c5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1801994979}
   smoothing: 0.1
   minPosition: {x: 8, y: 5}
   maxPosition: {x: 54, y: 26}
@@ -4632,9 +4631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d50323794fe6224a978ee913e904835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerEnterPos: {x: -5.9, y: 3.2, z: 0}
   ImgBg: {fileID: 1032440478}
   MsgTxt: {fileID: 60434096}
-  SkipMsg: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -17,10 +17,15 @@ public class JiXieGongChang : MonoBehaviour
         new TalkItem(){Name = "奥利" , Msg = "但想拿到钥匙就必须击败他" , TalkNPC = TalkNPC.Player1} ,
     };
     
+    private static bool alreadyTalk;
     void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     // Update is called once per frame

@@ -12,10 +12,16 @@ public class DiXiaGongDian2 : MonoBehaviour
         new TalkItem(){Name = "托克" , Msg = "似乎机械先驱就在附近，但这个房间似乎没有出口。" , TalkNPC = TalkNPC.Player2} , 
     };
 
+    private static bool alreadyTalk;
     public Vector3 PlayerEnterPos;
     private void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     public Image ImgBg;

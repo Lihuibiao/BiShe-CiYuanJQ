@@ -21,7 +21,7 @@ public class TalkItem
 public class StartGameSceneTalk : MonoBehaviour
 {
     public static StartGameSceneTalk Inst;
-
+    public Vector3 PlayerEnterPos;
     private void Awake()
     {
         Inst = this;
@@ -53,16 +53,17 @@ public class StartGameSceneTalk : MonoBehaviour
 
     public Image ImgBg;
     public Text MsgTxt;
-    public bool SkipMsg = false;
     private int CurDispIndex = 0;
+    private static bool alreadyTalk;
     private void Start()
     {
-        if (SkipMsg)
-        {
-            return;
-        }
         PlayerController.Inst.enabled = false;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
+        PlayerController.Inst.transform.position = PlayerEnterPos;
     }
 
     private void Update()

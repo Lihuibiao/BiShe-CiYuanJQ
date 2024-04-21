@@ -17,11 +17,16 @@ public class JiXie1 : MonoBehaviour
         new TalkItem(){Name = "机械先驱" , Msg = "（愤怒++++）" , TalkNPC = TalkNPC.NPC} ,
     };
     
+    private static bool alreadyTalk;
     // Start is called before the first frame update
     void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     // Update is called once per frame

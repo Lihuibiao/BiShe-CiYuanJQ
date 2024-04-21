@@ -17,11 +17,16 @@ public class Dixia2 : MonoBehaviour
         new TalkItem(){Name = "奥利" , Msg = "这就是机械蝇吗" , TalkNPC = TalkNPC.Player1} ,
         new TalkItem(){Name = "托克" , Msg = "是的，似乎只有击败他才能通过此地,小心机械蝇的利爪" , TalkNPC = TalkNPC.Player2} ,
     };
-    
+
+    private static bool alreadyTalk;
     void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     // Update is called once per frame

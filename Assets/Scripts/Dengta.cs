@@ -11,11 +11,16 @@ public class Dengta : MonoBehaviour
     public Image ImgBg;
     public Text MsgTxt;
     private int CurDispIndex = 0;
+    private static bool alreadyTalk;
     // Start is called before the first frame update
     void Start()
     {
         PlayerController.Inst.transform.position = PlayerEnterPos;
-        DispMsg();
+        if (!alreadyTalk)
+        {
+            alreadyTalk = true;
+            DispMsg();   
+        }
     }
 
     private List<TalkItem> FirstTalkList = new List<TalkItem>()
@@ -43,7 +48,7 @@ public class Dengta : MonoBehaviour
         if (playerInTrig && Input.GetKeyDown(KeyCode.F) && !DianTiAni.enabled)
         {
             DianTiAni.enabled = true;
-            this.Invoke("delay2CloseDianTiAni" , 1.2f);
+            this.Invoke("delay2CloseDianTiAni" , 1.4f);
         }
     }
 
