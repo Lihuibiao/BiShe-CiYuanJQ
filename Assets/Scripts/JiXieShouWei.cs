@@ -44,7 +44,7 @@ public class JiXieShouWei : MonoBehaviour
 
         if (Time.timeSinceLevelLoad - lastAttackTime > 3)
         {
-            if (PlayerDis < 10)
+            if (PlayerDis < 12)
             {
                 // 攻击
                 if (Random.Range(0, 3) == 0)
@@ -141,7 +141,7 @@ public class JiXieShouWei : MonoBehaviour
         this.myAnim.SetBool("Attack1", false);
         this.myAnim.SetBool("Attack2", false);
         this.myAnim.SetBool("Attack3", false);
-        if (PlayerDis < 10)
+        if (PlayerDis < 12)
         {
             PlayerController.Inst.Hp--;
             return;
