@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     public int Attack = 1;
     public int Hp = 20;
     public int Score;
+
+
+    public RuntimeAnimatorController initAniCtrl;
+    public RuntimeAnimatorController secAniCtrl;
     void Awake()
     {
         if (PlayerController.Inst != null)
@@ -28,7 +32,11 @@ public class PlayerController : MonoBehaviour
         PolygonCollider2D = GetComponent<PolygonCollider2D>();
         myRigidbody = GetComponent<Rigidbody2D>();
         Inst = this;
-        
+     
+        if (initAniCtrl != null)
+        {
+            myAnim.runtimeAnimatorController = initAniCtrl;   
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -36,6 +44,17 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         fixedCollider();
+        if (Input.GetKeyDown(KeyCode.Q) && initAniCtrl != null && secAniCtrl != null)
+        {
+            if (this.myAnim.runtimeAnimatorController == initAniCtrl)
+            {
+                this.myAnim.runtimeAnimatorController = secAniCtrl;
+            }
+            else
+            {
+                this.myAnim.runtimeAnimatorController = initAniCtrl;
+            }
+        }
     }
 
     private void FixedUpdate()

@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 95610371}
   - component: {fileID: 95610370}
   - component: {fileID: 95610374}
+  - component: {fileID: 95610375}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -343,6 +344,20 @@ MonoBehaviour:
   minPosition: {x: 8, y: 5}
   maxPosition: {x: 54, y: 26}
   Offset: {x: 0, y: 0}
+--- !u!114 &95610375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95610369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406fe33cc71257944979d78c035edac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBg: {fileID: 426023062}
+  SecBg: {fileID: 1018255195}
 --- !u!1 &172412149
 GameObject:
   m_ObjectHideFlags: 0
@@ -4201,7 +4216,7 @@ Animator:
   m_GameObject: {fileID: 1801994976}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 98b6b7a2a7921074f8304b718f6839a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1c1f7b67562396c4dbc916da30e9d0c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4229,6 +4244,8 @@ MonoBehaviour:
   Attack: 1
   Hp: 20
   Score: 0
+  initAniCtrl: {fileID: 9100000, guid: 98b6b7a2a7921074f8304b718f6839a8, type: 2}
+  secAniCtrl: {fileID: 9100000, guid: 1c1f7b67562396c4dbc916da30e9d0c9, type: 2}
   AttackXieZi: {fileID: 0}
 --- !u!60 &1801994983
 PolygonCollider2D:

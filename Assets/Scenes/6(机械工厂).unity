@@ -5661,7 +5661,7 @@ GameObject:
   - component: {fileID: 1456004886}
   - component: {fileID: 1456004885}
   m_Layer: 0
-  m_Name: "1 \uFF082\uFF09"
+  m_Name: "\u80CC\u666F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5826,6 +5826,7 @@ GameObject:
   - component: {fileID: 1541633200}
   - component: {fileID: 1541633204}
   - component: {fileID: 1541633205}
+  - component: {fileID: 1541633206}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -5953,7 +5954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94420467e2484fc7a4e9c029f183c5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1427831113}
   smoothing: 0.1
   minPosition: {x: -29.6, y: 2.4}
   maxPosition: {x: 34.2, y: 37.4}
@@ -5979,6 +5979,20 @@ MonoBehaviour:
   ChuanSongMen: {fileID: 2026971922}
   doors:
   - {fileID: 1111160358}
+--- !u!114 &1541633206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541633199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406fe33cc71257944979d78c035edac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBg: {fileID: 492910576}
+  SecBg: {fileID: 1456004884}
 --- !u!1 &1620894032
 GameObject:
   m_ObjectHideFlags: 0

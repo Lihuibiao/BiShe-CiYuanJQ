@@ -6130,6 +6130,7 @@ GameObject:
   - component: {fileID: 1681201132}
   - component: {fileID: 1681201136}
   - component: {fileID: 1681201137}
+  - component: {fileID: 1681201138}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -6276,6 +6277,20 @@ MonoBehaviour:
   PlayerEnterPos: {x: 72.5, y: 64.4, z: 0}
   ImgBg: {fileID: 1868478193}
   MsgTxt: {fileID: 1410813897}
+--- !u!114 &1681201138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681201131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406fe33cc71257944979d78c035edac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBg: {fileID: 892527157}
+  SecBg: {fileID: 721477669}
 --- !u!1 &1816101842
 GameObject:
   m_ObjectHideFlags: 0

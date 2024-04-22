@@ -4616,6 +4616,7 @@ GameObject:
   - component: {fileID: 1813230245}
   - component: {fileID: 1813230249}
   - component: {fileID: 1813230250}
+  - component: {fileID: 1813230251}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -4768,6 +4769,20 @@ MonoBehaviour:
   ChuanSongMen: {fileID: 0}
   doors:
   - {fileID: 828942811}
+--- !u!114 &1813230251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813230244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406fe33cc71257944979d78c035edac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitBg: {fileID: 1098211637}
+  SecBg: {fileID: 1234702694}
 --- !u!1 &1873686952
 GameObject:
   m_ObjectHideFlags: 0
